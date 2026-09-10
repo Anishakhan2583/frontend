@@ -11,9 +11,12 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // 🟢 LOCALHOST HATA KAR RAILWAY KA LINK YAHAN SET KAR DIYA HAI
+    const baseURL = "https://backend-production-3bc9e.up.railway.app";
+
     const url = isLogin
-      ? "http://localhost:5000/api/auth/login"
-      : "http://localhost:5000/api/auth/register";
+      ? `${baseURL}/api/auth/login`
+      : `${baseURL}/api/auth/register`;
 
     const data = isLogin
       ? {
